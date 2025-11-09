@@ -3,19 +3,18 @@ package com.devph.tecnostory.Model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "categoria")
-public class CategoriaEntity {
+@Table(name = "marca")
+public class MarcaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, unique = true)
     private String nome;
 
-    public CategoriaEntity() {
-    }
-    public CategoriaEntity(String nome) {
+    public MarcaEntity() {}
+
+    public MarcaEntity(String nome) {
         this.nome = nome;
     }
 
