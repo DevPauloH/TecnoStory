@@ -1,8 +1,12 @@
 package com.devph.tecnostory.Model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "categoria")
 public class CategoriaEntity {
 
@@ -19,15 +23,4 @@ public class CategoriaEntity {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }

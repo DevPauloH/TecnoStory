@@ -1,8 +1,12 @@
 package com.devph.tecnostory.Model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "marca")
 public class MarcaEntity {
 
@@ -15,18 +19,6 @@ public class MarcaEntity {
     public MarcaEntity() {}
 
     public MarcaEntity(String nome) {
-        this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
     }
 }
