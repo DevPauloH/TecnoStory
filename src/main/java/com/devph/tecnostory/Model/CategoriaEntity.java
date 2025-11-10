@@ -23,4 +23,5 @@ public class CategoriaEntity {
         this.nome = nome;
     }
 
+
 }
