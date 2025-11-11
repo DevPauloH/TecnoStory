@@ -3,6 +3,7 @@ package com.devph.tecnostory.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "venda")
 public class VendaEntity {
 
@@ -29,5 +31,12 @@ public class VendaEntity {
     @ManyToOne
     @JoinColumn(name = "id_cliente", nullable = false)
     private ClienteEntity cliente;
+
+
+    public VendaEntity(BigDecimal valorTotal, ClienteEntity cliente) {
+        this.dataVenda = LocalDateTime.now();
+        this.valorTotal = valorTotal;
+        this.cliente = cliente;
+    }
 
 }
