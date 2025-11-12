@@ -16,14 +16,16 @@ public class ClienteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false)
+    @Column(name = "nome", nullable = false)
     private String nome;
 
+    @Column(name = "email", nullable = false)
     private String email;
 
+    @Column(name = "telefone", nullable = false)
     private String telefone;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
 
 }
