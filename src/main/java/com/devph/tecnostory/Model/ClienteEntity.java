@@ -2,11 +2,13 @@ package com.devph.tecnostory.Model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "cliente")
 public class ClienteEntity {
 
@@ -24,6 +26,4 @@ public class ClienteEntity {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    public ClienteEntity() {
-    }
 }
