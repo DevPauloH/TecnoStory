@@ -16,11 +16,11 @@ public class VendaProdutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_venda_produto", updatable = false)
+    @Column(name = "id_vp", updatable = false)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "id_vp", nullable = false)
+    @JoinColumn(name = "id_venda", nullable = false)
     private VendaEntity venda;
 
     @ManyToOne
