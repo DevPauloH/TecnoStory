@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @Table(name = "venda")
-public class VendaEntity {
+public class vendaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,12 +31,12 @@ public class VendaEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", nullable = false)
-    private ClienteEntity cliente;
+    private clienteEntity cliente;
 
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<VendaProdutoEntity> itens;
+    private List<vendaProdutoEntity> itens;
 
-    public VendaEntity(BigDecimal valorTotal, ClienteEntity cliente) {
+    public vendaEntity(BigDecimal valorTotal, clienteEntity cliente) {
         this.dataVenda = LocalDateTime.now();
         this.valorTotal = valorTotal;
         this.cliente = cliente;
