@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -32,6 +33,8 @@ public class VendaEntity {
     @JoinColumn(name = "id_cliente", nullable = false)
     private ClienteEntity cliente;
 
+    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VendaProdutoEntity> itens;
 
     public VendaEntity(BigDecimal valorTotal, ClienteEntity cliente) {
         this.dataVenda = LocalDateTime.now();
