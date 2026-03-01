@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @Table(name = "venda_produto")
-public class vendaProdutoEntity {
+public class VendaProdutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,11 @@ public class vendaProdutoEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_venda", nullable = false)
-    private vendaEntity venda;
+    private VendaEntity venda;
 
     @ManyToOne
     @JoinColumn(name = "id_produto", nullable = false)
-    private produtoEntity produto;
+    private ProdutoEntity produto;
 
     @Column(name = "quant", nullable = false)
     private int quantidade;
@@ -33,7 +33,7 @@ public class vendaProdutoEntity {
     @Column(name = "preco_unitario", precision = 10, scale = 2, nullable = false)
     private BigDecimal precoUnitario;
 
-    public vendaProdutoEntity(vendaEntity venda, produtoEntity produto, int quantidade, BigDecimal precoUnitario) {
+    public VendaProdutoEntity(VendaEntity venda, ProdutoEntity produto, int quantidade, BigDecimal precoUnitario) {
         this.venda = venda;
         this.produto = produto;
         this.quantidade = quantidade;

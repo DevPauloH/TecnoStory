@@ -9,23 +9,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "cliente")
-public class clienteEntity {
+@Table(name = "marca")
+public class MarcaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_marca", updatable = false)
     private int id;
 
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "email", nullable = false)
-    private String email;
 
-    @Column(name = "telefone", nullable = false)
-    private String telefone;
-
-    @Column(name = "cpf", nullable = false, unique = true)
-    private String cpf;
-
+    public MarcaEntity(String nome) {
+        this.nome = nome;
+    }
 }

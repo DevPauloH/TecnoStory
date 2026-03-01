@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public record vendaRecordDTO(Integer id, @NotNull LocalDateTime dataVenda, @NotNull BigDecimal valorTotal, @NotNull Integer idCliente) {
+public record VendaRecordDTO(Integer id, @NotNull LocalDateTime dataVenda, @NotNull BigDecimal valorTotal, @NotNull Integer idCliente) {
 }
